@@ -76,40 +76,38 @@ src/
 └── contexts/             # Gestão de estado global (LenisContext)
 ```
 
-
-🚀 Como Executar Localmente
+## 🚀 Como Executar Localmente
 
 Clone o repositório:
 
-git clone [https://github.com/Eliazynho/portfolio.git](https://github.com/Eliazynho/portfolio.git)
-
+```bash
+git clone https://github.com/Eliazynho/portfolio.git
+```
 
 Instale as dependências:
 
+```bash
 npm install
-
+```
 
 Inicie o servidor de desenvolvimento:
 
+```bash
 npm run dev
+```
 
+Aceda a [http://localhost:3000](http://localhost:3000).
 
-Aceda a http://localhost:3000.
-
-📄 Contacto
+## 📄 Contato
 
 Se é um recrutador, cliente ou programador e gostou do resultado, sinta-se à vontade para entrar em contacto. Estou disponível para projetos desafiantes.
 
 <div align="center">
-<a href="mailto:contato@elias.dev">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Email-Entre_em_Contato-white%3Fstyle%3Dfor-the-badge%26logo%3Dgmail%26logoColor%3Dblack" alt="Email" />
-</a>
-<a href="https://www.google.com/search?q=https://linkedin.com/in/seu-linkedin">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/LinkedIn-Conectar-0077B5%3Fstyle%3Dfor-the-badge%26logo%3Dlinkedin" alt="LinkedIn" />
-</a>
-<a href="https://www.google.com/search?q=https://github.com/seu-usuario">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/GitHub-Ver_Perfil-181717%3Fstyle%3Dfor-the-badge%26logo%3Dgithub" alt="GitHub" />
-</a>
+
+[![Email](https://img.shields.io/badge/Email-Entre_em_Contato-white?style=for-the-badge&logo=gmail&logoColor=black)](mailto:m10elias10@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Conectar-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/eliassantos1)
+[![GitHub](https://img.shields.io/badge/GitHub-Ver_Perfil-181717?style=for-the-badge&logo=github)](https://github.com/Eliazynho)
+
 </div>
 
 Desenvolvido por Elias Santos.
