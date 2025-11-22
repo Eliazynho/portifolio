@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-bg-dark: #0A0A0A;
+  --color-bg-card: #111111;
+  --color-border-dark: #333333;
+  --color-text-muted: #999999;
+  
+  --font-inter: var(--font-inter);
+  --font-playfair: var(--font-playfair);
+  --font-manrope: var(--font-manrope);
+  --font-newsreader: var(--font-newsreader);
+  --font-space: var(--font-space);
+  --font-public: var(--font-public);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg-dark);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  /* Garante que o scroll do body também use o tema */
+  scrollbar-color: #333333 var(--color-bg-dark);
+}
+
+/* Ícones */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee-reverse {
+  animation: marquee 30s linear infinite reverse;
+}
+
+/* --- SCROLLBAR PREMIUM (Aplica em TUDO) --- */
+
+/* Largura da barra */
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 8px; /* Mais fino e elegante */
+  height: 8px; /* Para scroll horizontal */
+}
+
+/* Trilho (Fundo) */
+::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+  background: transparent; /* Transparente para se fundir ao modal/fundo */
+  margin-block: 4px; /* Pequena margem nas pontas */
+}
+
+/* A "Pega" (Thumb) - Estado Normal */
+::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  background-color: #333333; /* Cinza escuro discreto */
+  border-radius: 99px; /* Totalmente redondo */
+  border: 2px solid transparent; /* Truque para dar espaçamento interno */
+  background-clip: content-box; /* Faz a cor respeitar a borda transparente */
+}
+
+/* A "Pega" (Thumb) - Hover */
+::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #FFFFFF; /* Fica branco brilhante ao interagir (Corinthians/Tech) */
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333333 transparent;
 }
