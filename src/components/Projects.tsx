@@ -4,34 +4,35 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import ProjectModal, { ProjectType } from "./ui/ProjectModal";
 
-// Dados Mockados
+// Dados Atualizados com o projeto "Aether"
 const projects: ProjectType[] = [
   {
     id: 1,
-    title: "Plataforma E-commerce",
-    subtitle: "Next.js 14 • Stripe • Tailwind",
-    description: "Solução completa de alta conversão.",
-    longDescription: "Desenvolvido com arquitetura Edge e Server Components para máxima performance. Integração total com Stripe e gestão de estoque em tempo real.",
-    tags: ["React", "Node.js", "PostgreSQL", "Redis"],
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80"
+    title: "Aether",
+    subtitle: "Frontend • Creative Coding • Weather",
+    description: "Dashboard climático imersivo com animações fluidas e dados em tempo real.",
+    longDescription: "Uma experiência de visualização climática que une 'Creative Coding' com dados meteorológicos precisos. Diferente de dashboards comuns, o Aether foca em micro-interações, fluidez de animações e uma estética 'Glassmorphism' profunda. Construído com arquitetura 'Zero-Backend' consumindo múltiplas APIs da Open-Meteo simultaneamente.",
+    tags: ["Next.js 16", "Tailwind CSS v4", "Framer Motion", "Open-Meteo API", "TypeScript"],
+    // 👇 Dica: Tire um print do projeto rodando e salve como 'aether.png' na pasta public
+    image: "/aether.png" 
   },
   {
     id: 2,
-    title: "Dashboard Financeiro",
-    subtitle: "Vue.js • D3.js • Firebase",
-    description: "Visualização de dados complexos simplificada.",
-    longDescription: "Renderização de milhares de pontos de dados sem travar o navegador, utilizando Web Workers e algoritmos otimizados.",
-    tags: ["Vue.js", "TypeScript", "Serverless"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+    title: "Nexus API (Em Breve)",
+    subtitle: "Backend • NestJS • Microservices",
+    description: "Arquitetura de microsserviços escalável para sistemas financeiros.",
+    longDescription: "Focado em performance e segurança, este projeto backend demonstrará o uso de filas (RabbitMQ), caching (Redis) e autenticação JWT robusta. (Projeto em desenvolvimento para o portfólio).",
+    tags: ["NestJS", "PostgreSQL", "Docker", "Redis", "RabbitMQ"],
+    image: "https://images.unsplash.com/photo-1558494949-ef526b0042a0?w=800&q=80" // Placeholder
   },
   {
     id: 3,
-    title: "App de Produtividade",
-    subtitle: "React Native • GraphQL",
-    description: "Gestão de tarefas minimalista offline-first.",
-    longDescription: "Focado na experiência mobile com sincronização WatermelonDB, garantindo funcionamento perfeito mesmo sem internet.",
-    tags: ["Mobile", "UX/UI", "Offline-First"],
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80"
+    title: "SaaS Starter (Em Breve)",
+    subtitle: "Fullstack • Next.js • Stripe",
+    description: "Plataforma completa de assinatura com gestão de usuários e pagamentos.",
+    longDescription: "A união perfeita entre um frontend responsivo e um backend seguro. Inclui autenticação (NextAuth), integração com Stripe para pagamentos recorrentes e painel administrativo.",
+    tags: ["Next.js 15", "Prisma", "Stripe", "Tailwind", "Supabase"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" // Placeholder
   }
 ];
 
@@ -45,10 +46,10 @@ export default function Projects() {
         
         <div className="mb-16">
           <h2 className="text-5xl font-black tracking-tighter text-white mb-2 mix-blend-difference">
-            Projetos
+            Projetos Selecionados
           </h2>
           <p className="text-gray-500 text-lg max-w-md">
-            Clique nos cartões para expandir.
+            Uma coleção de experimentos, ferramentas e soluções completas.
           </p>
         </div>
 
@@ -58,34 +59,47 @@ export default function Projects() {
               layoutId={`card-${project.id}`}
               key={project.id}
               onClick={() => setSelectedId(project.id)}
-              className="group relative cursor-pointer flex flex-col overflow-hidden rounded-2xl bg-[#111] border border-white/10 hover:border-white/30 transition-colors h-[400px]"
+              className="group relative cursor-pointer flex flex-col overflow-hidden rounded-2xl bg-[#111] border border-white/10 hover:border-white/30 transition-colors h-[450px]"
             >
+              {/* Imagem com Overlay */}
               <div className="relative h-full w-full overflow-hidden">
                 <Image 
                   src={project.image} 
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-80"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-[#111]/20 to-transparent opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-transparent" />
               </div>
 
-              <div className="absolute bottom-0 p-6 w-full">
+              {/* Conteúdo do Card */}
+              <div className="absolute bottom-0 p-8 w-full z-10">
+                <motion.div 
+                  layoutId={`category-${project.id}`}
+                  className="mb-2 flex gap-2"
+                >
+                  {/* Mostra apenas a primeira tag como 'categoria' */}
+                  <span className="px-2 py-1 rounded border border-white/10 bg-white/5 text-[10px] font-bold uppercase tracking-wider text-white/70">
+                    {project.tags[0]}
+                  </span>
+                </motion.div>
+
                 <motion.h3 
                   layoutId={`title-${project.id}`}
-                  className="text-xl font-bold text-white mb-1"
+                  className="text-3xl font-bold text-white mb-1 font-playfair"
                 >
                   {project.title}
                 </motion.h3>
+                
                 <motion.p 
                   layoutId={`subtitle-${project.id}`}
-                  className="text-sm text-gray-400 font-mono mb-3"
+                  className="text-sm text-gray-400 font-mono mb-4 line-clamp-2"
                 >
-                  {project.subtitle}
+                  {project.description}
                 </motion.p>
                 
-                <div className="flex gap-2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300">
-                   <span className="text-xs font-bold uppercase tracking-widest text-white border-b border-white pb-0.5">Ver Detalhes</span>
+                <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 duration-300 delay-75">
+                   <span className="text-xs font-bold uppercase tracking-widest text-white border-b border-white pb-0.5">Ver Estudo de Caso</span>
                 </div>
               </div>
             </motion.div>

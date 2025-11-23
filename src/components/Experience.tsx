@@ -1,21 +1,23 @@
+"use client"
+
 export default function Experience() {
   const experiences = [
     {
-      year: "2020 - Presente",
-      role: "Desenvolvedor Fullstack Sênior",
-      company: "Tech Solutions Inc.",
-      desc: ["Liderança no desenvolvimento de aplicações web com React e Node.js.", "Arquitetura de microserviços e otimização de banco de dados."]
+      year: "2025 - Presente",
+      role: "Desenvolvedor Frontend",
+      company: "Tiketei app",
+      desc: ["Desenvolvimento de interfaces modernas e responsivas com React e Next.js.", "Colaboração UX/UI para produtos acessíveis."]
     },
     {
-      year: "2018 - 2020",
-      role: "Desenvolvedor Frontend Pleno",
-      company: "Web Innovators",
-      desc: ["Interfaces reativas com Vue.js e TypeScript.", "Colaboração UX/UI para produtos acessíveis."]
+      year: "2025 - Presente",
+      role: "Desenvolvedor Frontend",
+      company: "Liga labs - Bolsita UPE",
+      desc: ["Equipe de sustentação de sistemas",  "Desenvolvimento único usando system design do governo"]
     },
     {
-      year: "2015 - 2017",
+      year: "2025 - 2027",
       role: "Análise e Desenvolvimento de Sistemas",
-      company: "Universidade Fictícia",
+      company: "Estácio de Sá",
       desc: ["Engenharia de software, algoritmos e estruturas de dados."]
     }
   ];
@@ -51,7 +53,9 @@ export default function Experience() {
         </div>
 
         <div className="flex justify-center mt-8">
-            <button className="px-8 py-3 bg-white text-black font-bold rounded hover:bg-gray-200 transition-colors">
+            <button className="px-8 py-3 bg-white text-black font-bold rounded hover:bg-gray-200 transition-colors"
+              onClick={() => window.open("/curriculo.pdf", "_blank")}
+            >
                 Baixar Currículo Completo
             </button>
         </div>
