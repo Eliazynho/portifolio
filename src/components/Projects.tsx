@@ -12,7 +12,7 @@ const projects: ProjectType[] = [
     description: "Dashboard climático imersivo com visualização de dados em tempo real.",
     longDescription: "Uma experiência visual focada em micro-interações e design glassmorphism. O Aether consome múltiplas APIs para entregar previsões meteorológicas precisas, qualidade do ar e dados astronômicos, tudo empacotado em uma interface Next.js 16 fluida.",
     tags: ["Next.js", "Tailwind v4", "Framer Motion", "Open-Meteo"],
-    image: "/aether-cover.png", // Mantemos a imagem para o card fechado
+    image: "/aether.png", // Mantemos a imagem para o card fechado
     liveUrl: "https://aether-forecast.vercel.app/" // URL AO VIVO
   },
   {
